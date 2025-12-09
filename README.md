@@ -41,7 +41,70 @@ The analysis revealed that:
 - **Pandas** (for data processing)  
 - **Matplotlib** (for visualization)
 
----
+## PREREQUISITE
+Before running this project, ensure you have the following installed:
+ - Python 3.8 or higher
+ - MYSQL 12 or higher
+ - PIP (Python package manager)
+ - Ubuntu Server or Linux-based OS
+
+## INSTALLATION
+### SYSTEM REQUIREMENTS SETUP (UBUNTU SERVER)
+1. UPDATE SYSTEM PACKAGE
+     bash
+     sudo apt update
+     sudo apt upgrade -y
+2. INSTALL PYTHON 3
+     bash
+     sudo apt install python3
+     sudo apt install python 3.12.3
+3. INSTALL PYTHON PACKAGES
+      bash
+      sudo apt install python3-pip
+      sudo apt install python3-pymysql
+      sudo apt install python3-requests
+      sudo apt install python3-datetime
+   
+4. CLONE THE REPOSITORY
+     bash
+     git clone https://github.com/IBen655/Open_weather_project.git
+     cd Open_weather_project
+
+<!-- CREATE VIRTUAL ENVIRONMENT
+   bash
+   python -m venv venv
+
+   <!-- Activate virtual environment -->
+   <!-- On Windows: -->
+   venv\Scripts\activate
+   <!-- On Mac/Linux: -->
+   source venv/bin/activate
+-->
+
+5. SETUP MYSQL DATABASE
+     bash
+     <! -- Install MySQL Server (if not already installed) -->
+     sudo apt update
+     sudo apt install mysql-server
+
+     <! -- Start MySQL service -->
+     sudo systemctl start mysql
+     sudo systemctl enable mysql
+
+     <! -- Check MySQL status -->
+     sudo systemctl status mysql
+
+     <! -- Access MySQL as root -->
+     sudo mysql -u root -p
+
+     <! -- Inside MySQL shell, create database and user -->
+     CREATE DATABASE your_database_name;
+     CREATE USER 'your_username'@'localhost' IDENTIFIED BY 'your_password';
+     GRANT ALL PRIVILEGES ON your_database_name.* TO 'your_username'@'localhost';
+     FLUSH PRIVILEGES;
+     EXIT;
+
+6. 
 
 ## 🪪 License
 This project is for educational purposes and may be reused with proper attribution.
