@@ -1,6 +1,6 @@
 # 🌦️ OpenWeather Current Data Pull-Up
 
-**Date:** 31st October 2025  
+**Date:** 10st December 2025  
 **Author:** Benjamin Ishimwe  
 
 ## 📝 Description
@@ -10,8 +10,8 @@ This project fetches data from external APIs and stores it in a database for per
 - **Set up API Access:** Register on the OpenWeather platform and generate an API key for accessing weather data.
 - **Fetch Current Weather Data:** Use Python to send requests to the OpenWeather API and collect real-time weather information.
 - **Data Storage:** Validates and processes API responses, and stores data efficiently in a database.
-- **Error Handlinga and Debugging:** Handles errors and retries failed requests.
-- **Data Automation:** Supports scheduled/automated data fetching and Logs all operations for monitoring and debugging
+- **Error Handling and Debugging:** Handles errors and retries failed requests.
+- **Data Automation and Cron Job:** Supports scheduled/automated data fetching and Logs all operations for monitoring and debugging
 - **Report Building using Powerbi:** Build a report using PowerBI and connect to Mysql server for automation
 - **Documentation:** Record and explain the entire process for reproducibility and learning purposes.
  
@@ -23,10 +23,11 @@ This project is a beginning of building a data pipeline. It consists of pulling 
 ---
 
 ## 🧭 Methodology
-a) Explored OpenWeather’s free plans and registered for an API key.  
-b) Used the **`requests`** module in Python to fetch current weather data for ten major African cities.  
-c) Structured the retrieved data into a **Pandas DataFrame** for easy manipulation and analysis.  
-d) Created **bar charts** with **Matplotlib** to visually compare the cities’ temperature levels.
+a) Explore OpenWeather’s free plans and registered for an API key.  
+b) Use the **`requests`** module in Python to fetch current weather data for 21 major African cities.  
+c) Connect API source to database and store every fetch batch to the database.
+d) Initiate a scheduling job for continous fetching.
+d) Build a PowerBI Report and connect it to the database for Automation.
 
 ---
 
@@ -38,81 +39,87 @@ The analysis revealed that:
 ---
 
 ## 🧩 Technologies Used
-- **Python 3**  
-- **Requests** (for API calls)  
-- **Pandas** (for data processing)  
-- **Matplotlib** (for visualization)
+- **Programming Languages:** Python 3, SQL  
+- **Database:** MySQL Server
+- **Database Driver:** PyMySQL  
+- **API Communication:**  requests library
+- **Environment Management:** python-dotenv
+- **Scheduling Work:** Crontab
+- **Server OS:** Ubuntu Server (Linux)
+ 
+---
 
 ## PREREQUISITE
 Before running this project, ensure you have the following installed:
  - Python 3.8 or higher
- - MYSQL 12 or higher
+ - MYSQL 8 or higher
  - PIP (Python package manager)
  - Ubuntu Server or Linux-based OS
 
 ## INSTALLATION
 ### SYSTEM REQUIREMENTS SETUP (UBUNTU SERVER)
-1. UPDATE SYSTEM PACKAGE\
-     bash \
-     sudo apt update \
-     sudo apt upgrade -y \
+1. UPDATE SYSTEM PACKAGE
+     bash 
+     sudo apt update 
+     sudo apt upgrade -y 
 2. INSTALL PYTHON 3
-     bash \
-     sudo apt install python3 \
-     sudo apt install python 3.12.3 \
+     bash 
+     sudo apt install python3 
+     sudo apt install python 3.12.3 
 3. INSTALL PYTHON PACKAGES
-      bash \
-      sudo apt install python3-pip \
-      sudo apt install python3-pymysql \
-      sudo apt install python3-requests \
-      sudo apt install python3-datetime \
+      bash 
+      sudo apt install python3-pip 
+      sudo apt install python3-pymysql 
+      sudo apt install python3-requests 
+      sudo apt install python3-datetime 
    
 4. CLONE THE REPOSITORY
      bash
      git clone https://github.com/IBen655/Open_weather_project.git
      cd Open_weather_project
 
-<!-- CREATE VIRTUAL ENVIRONMENT
+5. CREATE VIRTUAL ENVIRONMENT
+   You may want to use python virtual environment. It is not mandatory to use it for you can use server system enviroment.
    bash
    python -m venv venv
 
-   <!-- Activate virtual environment -->\
-   <!-- On Windows: -->\
-   venv\Scripts\activate \
+   <!--Activate virtual environment-->
+   <!--On Windows:-->
+   venv\Scripts\activate 
    
-   <!-- On Mac/Linux: --> \
+   <!--On Mac/Linux:--> 
    source venv/bin/activate
--->
+   
 
-5. SETUP MYSQL DATABASE
+7. SETUP MYSQL DATABASE
      bash
-     <! -- Install MySQL Server (if not already installed) -->
+     <! --Install MySQL Server (if not already installed)-->
      sudo apt update
      sudo apt install mysql-server
 
-     <! -- Start MySQL service -->
+     <! --Start MySQL service-->
      sudo systemctl start mysql
      sudo systemctl enable mysql
 
-     <! -- Check MySQL status -->
+     <! --Check MySQL status-->
      sudo systemctl status mysql
 
-     <! -- Access MySQL as root -->
+     <! --Access MySQL as root-->
      sudo mysql -u root -p
 
-     <! -- Inside MySQL shell, create database and user -->
+     <! --Inside MySQL shell, create database and user-->
      CREATE DATABASE your_database_name;
      CREATE USER 'your_username'@'localhost' IDENTIFIED BY 'your_password';
      GRANT ALL PRIVILEGES ON your_database_name.* TO 'your_username'@'localhost';
      FLUSH PRIVILEGES;
      EXIT;
 
-6. CONFIGURATION
+8. CONFIGURATION
      Create a .env file in the project root with the following variables:
             env<br>
-            # API Configuration<br>
-            API_KEY=your_api_key_here<br>
-            API_BASE_URL=https://api.example.com<br>
+            # API Configuration
+            API_KEY=your_api_key_here
+            API_BASE_URL=https://api.example.com
 
             # Database Configuration
             DB_HOST=localhost
@@ -121,7 +128,7 @@ Before running this project, ensure you have the following installed:
             DB_USER=your_username
             DB_PASSWORD=your_password
    
-   7. DEPENDENCIES(REQUIREMENT.TXT)
+   8. DEPENDENCIES(REQUIREMENT.TXT)
         PyMySQL==1.1.0
         requests==2.31.0
         python-dotenv==1.0.0
@@ -151,7 +158,7 @@ Before running this project, ensure you have the following installed:
             -CLOUDINESS INT
 ## USAGE
    Run this script for the first time
-       bash<br>
+       bash
        python3 weather_data.py<br>
        
    The script will:
@@ -207,10 +214,13 @@ The script uses Python's logging module to track operations. Logs include:
 
 ## ERROR HANDLING
 
-      -API request failures are logged with error messages
-      -Database connection errors are caught and logged
-      -Duplicate entries are automatically skipped using INSERT IGNORE
-
+      *API request failures are logged with error messages
+      *Database connection errors are caught and logged
+      *Duplicate entries are automatically skipped using INSERT IGNORE
+## SCHEDULED SCRIPT RUNNING
+     + Initiate a cron job using crontab
+     + schedule a cron job every 3 hours
+     
 ## SECURITY NOTE
 
 ⚠️ Warning: This script contains a hardcoded database password and API key. For production use:
