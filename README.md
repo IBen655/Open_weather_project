@@ -130,7 +130,7 @@ Before running this project, ensure you have the following installed:
              sudo apt install python3-requests
              sudo pip3 install pymysql python-dotenv
 
-## [image](https://www.flaticon.com/free-icon/database_4562989) DATABASE SCHEMA
+## ![image](https://www.flaticon.com/free-icon/database_4562989) DATABASE SCHEMA
      This project creates and uses one project namely:
 
         ### ** WEATHER_DATA **
