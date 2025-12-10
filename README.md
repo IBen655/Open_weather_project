@@ -27,7 +27,7 @@ a) Explore OpenWeather’s free plans and registered for an API key.
 b) Use the **`requests`** module in Python to fetch current weather data for 21 major African cities.  
 c) Connect API source to database and store every fetch batch to the database.
 d) Initiate a scheduling job for continous fetching.
-d) Build a PowerBI Report and connect it to the database for Automation.
+e) Build a PowerBI Report and connect it to the database for Automation.
 
 ---
 
@@ -58,20 +58,23 @@ Before running this project, ensure you have the following installed:
 
 ## INSTALLATION
 ### SYSTEM REQUIREMENTS SETUP (UBUNTU SERVER)
-1. UPDATE SYSTEM PACKAGE
+1. <ins>UPDATE SYSTEM PACKAGE</ins>
+
      bash
    
      sudo apt update
     
      sudo apt upgrade -y 
-3. INSTALL PYTHON 3
+2. <ins>INSTALL PYTHON 3</ins>
+
      bash
    
      sudo apt install python3
     
      sudo apt install python 3.12.3
    
-5. INSTALL PYTHON PACKAGES
+3. <ins>INSTALL PYTHON PACKAGES</ins>
+
       bash
    
       sudo apt install python3-pip
@@ -82,14 +85,17 @@ Before running this project, ensure you have the following installed:
    
       sudo apt install python3-datetime 
    
-7. CLONE THE REPOSITORY
+4. <ins>CLONE THE REPOSITORY</ins>
+   
      bash
+   
      git clone https://github.com/IBen655/Open_weather_project.git
    
      cd Open_weather_project
 
-9. CREATE VIRTUAL ENVIRONMENT
+6. <ins>CREATE VIRTUAL ENVIRONMENT</ins>
    You may want to use python virtual environment. It is not mandatory to use it for you can use server system enviroment.
+   
    bash
    
    python -m venv venv
@@ -105,7 +111,8 @@ Before running this project, ensure you have the following installed:
    source venv/bin/activate
    
 
-11. SETUP MYSQL DATABASE
+7. <ins>SETUP MYSQL DATABASE</ins>
+
      bash
     
      <! --Install MySQL Server (if not already installed)-->
@@ -129,6 +136,7 @@ Before running this project, ensure you have the following installed:
      sudo mysql -u root -p
 
      <! --Inside MySQL shell, create database and user-->
+   
      CREATE DATABASE your_database_name;
     
      CREATE USER 'your_username'@'localhost' IDENTIFIED BY 'your_password';
@@ -139,7 +147,7 @@ Before running this project, ensure you have the following installed:
     
      EXIT;
 
-13. CONFIGURATION
+9. CONFIGURATION
      Create a .env file in the project root with the following variables:
             env
     
@@ -157,14 +165,14 @@ Before running this project, ensure you have the following installed:
             DB_USER=your_username
             DB_PASSWORD=your_password
    
-   8. DEPENDENCIES(REQUIREMENT.TXT)
+   8. <ins>DEPENDENCIES(REQUIREMENT.TXT)</ins>
         PyMySQL==1.1.0
       
         requests==2.31.0
       
         python-dotenv==1.0.0
       
-   ** Note **: On Ubuntu Server, packages are installed system-wide using:
+  <ins>** Note **</ins>: On Ubuntu Server, packages are installed system-wide using:
              bash
       
              sudo apt install python3-requests
