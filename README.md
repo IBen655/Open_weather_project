@@ -159,7 +159,7 @@ Before running this project, ensure you have the following installed:
          2. Fetch 5-day forecast data for each configured city
          3. Insert the data into your MySQL database
          4. Log progress and any errors encountered
- ## <img src="Screenshot 2025-12-10 115503.png" alt="description" width="30" height="30"> CITIES COVERED
+ ## <img src="Screenshot 2025-12-10 115503.png" alt="icon" width="30" height="30"> CITIES COVERED
 The script fetches weather data for the following African cities:
             -Kigali (Rwanda)
             -Kampala (Uganda)
