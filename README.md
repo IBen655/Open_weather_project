@@ -114,12 +114,12 @@ Before running this project, ensure you have the following installed:
             API_KEY=your_api_key_here<br>
             API_BASE_URL=https://api.example.com<br>
 
-            # Database Configuration<br>
-            DB_HOST=localhost<br>
-            DB_PORT=3306<br>
-            DB_NAME=your_database_name<br>
-            DB_USER=your_username<br>
-            DB_PASSWORD=your_password<br>
+            # Database Configuration
+            DB_HOST=localhost
+            DB_PORT=3306
+            DB_NAME=your_database_name
+            DB_USER=your_username
+            DB_PASSWORD=your_password
    
    7. DEPENDENCIES(REQUIREMENT.TXT)
         PyMySQL==1.1.0
@@ -130,7 +130,7 @@ Before running this project, ensure you have the following installed:
              sudo apt install python3-requests
              sudo pip3 install pymysql python-dotenv
 
-## ![image](https://www.flaticon.com/free-icon/database_4562989) DATABASE SCHEMA
+## DATABASE SCHEMA
      This project creates and uses one project namely:
 
         ### ** WEATHER_DATA **
