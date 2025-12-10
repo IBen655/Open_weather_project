@@ -59,67 +59,96 @@ Before running this project, ensure you have the following installed:
 ## INSTALLATION
 ### SYSTEM REQUIREMENTS SETUP (UBUNTU SERVER)
 1. UPDATE SYSTEM PACKAGE
-     bash 
-     sudo apt update 
+     bash
+   
+     sudo apt update
+    
      sudo apt upgrade -y 
-2. INSTALL PYTHON 3
-     bash 
-     sudo apt install python3 
-     sudo apt install python 3.12.3 
-3. INSTALL PYTHON PACKAGES
-      bash 
-      sudo apt install python3-pip 
-      sudo apt install python3-pymysql 
-      sudo apt install python3-requests 
+3. INSTALL PYTHON 3
+     bash
+   
+     sudo apt install python3
+    
+     sudo apt install python 3.12.3
+   
+5. INSTALL PYTHON PACKAGES
+      bash
+   
+      sudo apt install python3-pip
+   
+      sudo apt install python3-pymysql
+   
+      sudo apt install python3-requests
+   
       sudo apt install python3-datetime 
    
-4. CLONE THE REPOSITORY
+7. CLONE THE REPOSITORY
      bash
      git clone https://github.com/IBen655/Open_weather_project.git
+   
      cd Open_weather_project
 
-5. CREATE VIRTUAL ENVIRONMENT
+9. CREATE VIRTUAL ENVIRONMENT
    You may want to use python virtual environment. It is not mandatory to use it for you can use server system enviroment.
    bash
+   
    python -m venv venv
 
    <!--Activate virtual environment-->
+   
    <!--On Windows:-->
+   
    venv\Scripts\activate 
    
-   <!--On Mac/Linux:--> 
+   <!--On Mac/Linux:-->
+   
    source venv/bin/activate
    
 
-7. SETUP MYSQL DATABASE
+11. SETUP MYSQL DATABASE
      bash
+    
      <! --Install MySQL Server (if not already installed)-->
+    
      sudo apt update
+    
      sudo apt install mysql-server
 
      <! --Start MySQL service-->
+    
      sudo systemctl start mysql
+    
      sudo systemctl enable mysql
 
      <! --Check MySQL status-->
+    
      sudo systemctl status mysql
 
      <! --Access MySQL as root-->
+    
      sudo mysql -u root -p
 
      <! --Inside MySQL shell, create database and user-->
      CREATE DATABASE your_database_name;
+    
      CREATE USER 'your_username'@'localhost' IDENTIFIED BY 'your_password';
+    
      GRANT ALL PRIVILEGES ON your_database_name.* TO 'your_username'@'localhost';
+    
      FLUSH PRIVILEGES;
+    
      EXIT;
 
-8. CONFIGURATION
+13. CONFIGURATION
      Create a .env file in the project root with the following variables:
-            env<br>
+            env
+    
             # API Configuration
+    
             API_KEY=your_api_key_here
+    
             API_BASE_URL=https://api.example.com
+    
 
             # Database Configuration
             DB_HOST=localhost
@@ -130,11 +159,16 @@ Before running this project, ensure you have the following installed:
    
    8. DEPENDENCIES(REQUIREMENT.TXT)
         PyMySQL==1.1.0
+      
         requests==2.31.0
+      
         python-dotenv==1.0.0
+      
    ** Note **: On Ubuntu Server, packages are installed system-wide using:
-             bash<br>
+             bash
+      
              sudo apt install python3-requests
+      
              sudo pip3 install pymysql python-dotenv
 
 ## <img src="https://www.flaticon.com/free-icon/database_4562989" width="30" height="30"> DATABASE SCHEMA
@@ -159,7 +193,8 @@ Before running this project, ensure you have the following installed:
 ## USAGE
    Run this script for the first time
        bash
-       python3 weather_data.py<br>
+       
+       python3 weather_data.py
        
    The script will:
          1. Connect to the OpenWeatherMap API
@@ -190,19 +225,20 @@ The script fetches weather data for the following African cities:
             -Tunis (Tunisia)
             -Bangui (Central African Republic)
             -Lilongwe (Malawi)
+You can fetch for the one you like. This is just a sample.
 
 ## <img src="Screenshot 2025-12-10 120824.png"  width="30" height="30"> DATA COLLECTED
 For each forecast entry, the following data is stored:
 
-        <img src="Screenshot 2025-12-10 115756.png" width="30" height="30"> City name and country
-        <img src="https://www.flaticon.com/free-icon/time_5521277"  width="30" height="30"> Timestamp
-        <img src="https://www.flaticon.com/free-icon/temperature_9549128?term=temperature&page=1&position=26&origin=search&related_id=9549128" width="30" height="30"> Temperature (current, min, max)
-        <img src="https://www.flaticon.com/free-icon/humidity_8923419?term=humidity+sensor&page=1&position=2&origin=search&related_id=8923419"  width="30" height="30"> Humidity
-        <img src="https://www.flaticon.com/free-icon/pressure-gauge_4117387?term=atmospheric+pressure&page=1&position=5&origin=search&related_id=4117387"  width="30" height="30"> Atmospheric pressure
-        <img src="http://flaticon.com/free-icon/sea-level_3095218?term=sea+level&page=1&position=38&origin=search&related_id=3095218"  width="30" height="30"> Sea level and ground level pressure
-        <img src="https://www.flaticon.com/free-icon/atmospheric-conditions_18005339?term=weather+condition&page=1&position=6&origin=search&related_id=18005339"  width="30" height="30"> Weather condition and description
-        <img src="https://www.flaticon.com/free-icon/windock_5378202?term=wind+speed&page=1&position=22&origin=search&related_id=5378202"  width="30" height="30"> Wind speed and direction
-        <img src="https://www.flaticon.com/free-icon/clouds_414825?term=atmospheric+cloud&page=1&position=9&origin=search&related_id=414825"  width="30" height="30"> Cloud coverage percentage
+        *<img src="Screenshot 2025-12-10 115756.png" width="30" height="30"> City name and country
+        *<img src="https://www.flaticon.com/free-icon/time_5521277"  width="30" height="30"> Timestamp
+        *<img src="https://www.flaticon.com/free-icon/temperature_9549128?term=temperature&page=1&position=26&origin=search&related_id=9549128" width="30" height="30"> Temperature (current, min, max)
+        *<img src="https://www.flaticon.com/free-icon/humidity_8923419?term=humidity+sensor&page=1&position=2&origin=search&related_id=8923419"  width="30" height="30"> Humidity
+        *<img src="https://www.flaticon.com/free-icon/pressure-gauge_4117387?term=atmospheric+pressure&page=1&position=5&origin=search&related_id=4117387"  width="30" height="30"> Atmospheric pressure
+        *<img src="http://flaticon.com/free-icon/sea-level_3095218?term=sea+level&page=1&position=38&origin=search&related_id=3095218"  width="30" height="30"> Sea level and ground level pressure
+        *<img src="https://www.flaticon.com/free-icon/atmospheric-conditions_18005339?term=weather+condition&page=1&position=6&origin=search&related_id=18005339"  width="30" height="30"> Weather condition and description
+        *<img src="https://www.flaticon.com/free-icon/windock_5378202?term=wind+speed&page=1&position=22&origin=search&related_id=5378202"  width="30" height="30"> Wind speed and direction
+        *<img src="https://www.flaticon.com/free-icon/clouds_414825?term=atmospheric+cloud&page=1&position=9&origin=search&related_id=414825"  width="30" height="30"> Cloud coverage percentage
 
 ## LOGGING
 The script uses Python's logging module to track operations. Logs include:
