@@ -159,7 +159,7 @@ Before running this project, ensure you have the following installed:
          2. Fetch 5-day forecast data for each configured city
          3. Insert the data into your MySQL database
          4. Log progress and any errors encountered
- ## [image]("C:\Users\ibenjamin\Pictures\Screenshots\Screenshot 2025-12-10 115503.png") CITIES COVERED
+ ## <img src="Screenshot 2025-12-10 115503.png" alt="description" width="30" height="30"> CITIES COVERED
 The script fetches weather data for the following African cities:
             -Kigali (Rwanda)
             -Kampala (Uganda)
@@ -195,6 +195,27 @@ For each forecast entry, the following data is stored:
         [image](https://www.flaticon.com/free-icon/atmospheric-conditions_18005339?term=weather+condition&page=1&position=6&origin=search&related_id=18005339)Weather condition and description
         [image](https://www.flaticon.com/free-icon/windock_5378202?term=wind+speed&page=1&position=22&origin=search&related_id=5378202)Wind speed and direction
         [image](https://www.flaticon.com/free-icon/clouds_414825?term=atmospheric+cloud&page=1&position=9&origin=search&related_id=414825)Cloud coverage percentage
-   
+
+## LOGGING
+The script uses Python's logging module to track operations. Logs include:
+
+         -Successful data fetches
+         -Number of records inserted
+         -Duplicate records skipped
+         -Any errors encountered
+
+## ERROR HANDLING
+
+      -API request failures are logged with error messages
+      -Database connection errors are caught and logged
+      -Duplicate entries are automatically skipped using INSERT IGNORE
+
+## SECURITY NOTE
+
+⚠️ Warning: This script contains a hardcoded database password and API key. For production use:
+
+             -Store credentials in environment variables
+             -Use a configuration file that's excluded from version control
+             -Never commit sensitive credentials to your repository
 ## 🪪 License
 This project is for educational purposes and may be reused with proper attribution.
