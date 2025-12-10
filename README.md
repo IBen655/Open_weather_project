@@ -107,7 +107,7 @@ Before running this project, ensure you have the following installed:
      FLUSH PRIVILEGES;
      EXIT;
 
-6. CONFIGURATION\
+6. CONFIGURATION
      Create a .env file in the project root with the following variables:
             env<br>
             # API Configuration<br>
@@ -130,10 +130,10 @@ Before running this project, ensure you have the following installed:
              sudo apt install python3-requests
              sudo pip3 install pymysql python-dotenv
 
-## DATABASE SCHEMA
+## <img src=https://www.flaticon.com/free-icon/database_4562989 width="30" height="30"> DATABASE SCHEMA
      This project creates and uses one project namely:
 
-        ### ** WEATHER_DATA **
+   ** WEATHER_DATA **
             -CITY_NAME VARCHAR(20) NOT NULL
             -COUNTRY VARCHAR(20)
             -TIME TIMESTAMP
@@ -159,6 +159,7 @@ Before running this project, ensure you have the following installed:
          2. Fetch 5-day forecast data for each configured city
          3. Insert the data into your MySQL database
          4. Log progress and any errors encountered
+         
  ## <img src="Screenshot 2025-12-10 115503.png" width="30" height="30"> CITIES COVERED
 The script fetches weather data for the following African cities:
             -Kigali (Rwanda)
@@ -183,18 +184,18 @@ The script fetches weather data for the following African cities:
             -Bangui (Central African Republic)
             -Lilongwe (Malawi)
 
-## [image]("C:\Users\ibenjamin\Pictures\Screenshots\Screenshot 2025-12-10 120824.png") DATA COLLECTED
+## <img src=Screenshot 2025-12-10 120824.png"  width="30" height="30"> DATA COLLECTED
 For each forecast entry, the following data is stored:
 
-        [image]("C:\Users\ibenjamin\Pictures\Screenshots\Screenshot 2025-12-10 115756.png")City name and country
-        [image](https://www.flaticon.com/free-icon/time_5521277)Timestamp
-        [image](https://www.flaticon.com/free-icon/temperature_9549128?term=temperature&page=1&position=26&origin=search&related_id=9549128)Temperature (current, min, max)
-        [image](https://www.flaticon.com/free-icon/humidity_8923419?term=humidity+sensor&page=1&position=2&origin=search&related_id=8923419)Humidity
-        [image](https://www.flaticon.com/free-icon/pressure-gauge_4117387?term=atmospheric+pressure&page=1&position=5&origin=search&related_id=4117387)Atmospheric pressure
-        [image](http://flaticon.com/free-icon/sea-level_3095218?term=sea+level&page=1&position=38&origin=search&related_id=3095218)Sea level and ground level pressure
-        [image](https://www.flaticon.com/free-icon/atmospheric-conditions_18005339?term=weather+condition&page=1&position=6&origin=search&related_id=18005339)Weather condition and description
-        [image](https://www.flaticon.com/free-icon/windock_5378202?term=wind+speed&page=1&position=22&origin=search&related_id=5378202)Wind speed and direction
-        [image](https://www.flaticon.com/free-icon/clouds_414825?term=atmospheric+cloud&page=1&position=9&origin=search&related_id=414825)Cloud coverage percentage
+        <img src=Screenshot 2025-12-10 115756.png" width="30" height="30"> City name and country
+        <img src=https://www.flaticon.com/free-icon/time_5521277  width="30" height="30"> Timestamp
+        <img src=https://www.flaticon.com/free-icon/temperature_9549128?term=temperature&page=1&position=26&origin=search&related_id=9549128 width="30" height="30"> Temperature (current, min, max)
+        <img src=https://www.flaticon.com/free-icon/humidity_8923419?term=humidity+sensor&page=1&position=2&origin=search&related_id=8923419  width="30" height="30"> Humidity
+        <img src=https://www.flaticon.com/free-icon/pressure-gauge_4117387?term=atmospheric+pressure&page=1&position=5&origin=search&related_id=4117387  width="30" height="30"> Atmospheric pressure
+        <img src=http://flaticon.com/free-icon/sea-level_3095218?term=sea+level&page=1&position=38&origin=search&related_id=3095218  width="30" height="30"> Sea level and ground level pressure
+        <img src=https://www.flaticon.com/free-icon/atmospheric-conditions_18005339?term=weather+condition&page=1&position=6&origin=search&related_id=18005339  width="30" height="30"> Weather condition and description
+        <img src=https://www.flaticon.com/free-icon/windock_5378202?term=wind+speed&page=1&position=22&origin=search&related_id=5378202  width="30" height="30"> Wind speed and direction
+        <img src=https://www.flaticon.com/free-icon/clouds_414825?term=atmospheric+cloud&page=1&position=9&origin=search&related_id=414825  width="30" height="30"> Cloud coverage percentage
 
 ## LOGGING
 The script uses Python's logging module to track operations. Logs include:
