@@ -1,10 +1,10 @@
-# 🌦️ OpenWeather Current Data Pull-Up
+# 🌦️ Automated Weather Report System
 
 **Date:** 10st December 2025  
 **Author:** Benjamin Ishimwe  
 
 ## 📝 Description
-This project fetches data from external APIs and stores it in a database for persistent storage and easy retrieval. It automates the process of collecting data from various API endpoints and organizing it in a structured database format.
+This project fetches data from external APIs and stores it in a database for persistent storage and easy retrieval. It automates the process of collecting data from various API endpoints and organizing it in a structured database format and update a Power BI report.
 
 ## 🎯 PROJECT OBJECTIVES
 - **Set up API Access:** Register on the OpenWeather platform and generate an API key for accessing weather data.
